@@ -1,0 +1,187 @@
+html {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+.game-area {
+  background-color: #1d4044;
+  position: relative;
+  margin: 10px auto 1em auto;
+  width: 600px;
+  height: 600px;
+  /* border: 2px solid white; */
+}
+
+.score,
+.speed {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  margin: 1em auto 1em auto;
+}
+
+.snake-body {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #9ae6b4;
+  z-index: 2;
+}
+
+.hold {
+  margin: auto;
+}
+
+.input {
+  position: relative;
+  /* -webkit-filter: invert(100%);
+  filter: invert(100%); */
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background-image: url('./images/gamepad.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 12em;
+  height: 12em;
+}
+.input::selection,
+.input::-moz-selection {
+  background: transparent;
+}
+
+.input > div {
+  width: 100%;
+  height: 100%;
+}
+
+.UP {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.LEFT {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.RIGHT {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.DOWN {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.snake-food {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: red;
+  z-index: 1;
+}
+
+.game-over {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+
+.game-over > h1 {
+  color: red;
+  font-size: 150%;
+  margin: 2em 0 0.5em 0;
+}
+
+.game-over > h3 {
+  font-size: 110%;
+}
+
+.game-over > button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.35em;
+  padding: 0.7em;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  margin: 0 0.3em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+button:disabled {
+  background-color: darkslategrey;
+}
+
+.highscore-table,
+th,
+td {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+.highscore-table > tbody > tr > td {
+  padding: 0.5em;
+}
+
+.inputName {
+  margin: 1em;
+  padding: 5px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.4em;
+  width: 20em;
+  height: 2em;
+}
+
+@media only screen and (max-height: 900px) {
+  .score {
+    font-size: 1em;
+    margin: 1em auto;
+  }
+  .speed {
+    font-size: 0.75em;
+    margin: 1em auto;
+  }
+
+  .game-area {
+    margin: 10vw auto 1em auto;
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .input {
+    width: 50vw;
+    height: 50vw;
+  }
+}
